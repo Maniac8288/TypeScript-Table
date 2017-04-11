@@ -3,11 +3,9 @@
     loaded for the click-to-edit viewmodel
  */
 import ko = require("knockout");
-import test = require("components/TableUsers/TableUsers");
-module ViewModel {
-   
+import test = require("components/user/table/index");
 
-
+namespace Component {
     export class AddUser {
         Id: KnockoutObservable<number>;
         FirstName: KnockoutObservable<string>;
@@ -40,9 +38,7 @@ module ViewModel {
         };
 
     }
-
 }
-export = ViewModel;
 // return the 'class' which is the constructor function
 //return ClickToEditViewModel;
 /**

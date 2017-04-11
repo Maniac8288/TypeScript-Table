@@ -38,7 +38,7 @@ define(["require", "exports", "knockout"], function (require, exports, ko) {
                 this.readonlyTemplate = ko.observable("readonlyTemplate");
                 this.editTemplate = ko.observable();
                 this.currentPage = ko.computed(function () {
-                    var pagesize = parseInt(_this.pageSize.toString(), 10), startIndex = pagesize * _this.currentPageIndex(), endIndex = startIndex + pagesize;
+                    var pagesize = parseInt(_this.pageSize().toString(), 10), startIndex = pagesize * _this.currentPageIndex(), endIndex = startIndex + pagesize;
                     return ItemViewModel.Collection.slice(startIndex, endIndex);
                 });
                 this.currentTemplate = function (tmpl) {
@@ -92,4 +92,4 @@ define(["require", "exports", "knockout"], function (require, exports, ko) {
     var ConstAddUser = "/home/AddUsers";
     return ViewModel;
 });
-//# sourceMappingURL=TableUsers.js.map
+//# sourceMappingURL=table.js.map

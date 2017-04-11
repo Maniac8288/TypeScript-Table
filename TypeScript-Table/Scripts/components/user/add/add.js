@@ -1,4 +1,4 @@
-define(["require", "exports", "knockout", "components/TableUsers/TableUsers"], function (require, exports, ko, test) {
+define(["require", "exports", "knockout", "components/user/table/table"], function (require, exports, ko, test) {
     "use strict";
     var ViewModel;
     (function (ViewModel) {
@@ -42,4 +42,4 @@ define(["require", "exports", "knockout", "components/TableUsers/TableUsers"], f
     var ConstAddUser = "/home/AddUsers";
     return ViewModel;
 });
-//# sourceMappingURL=AddUser.js.map
+//# sourceMappingURL=add.js.map

@@ -1,7 +1,8 @@
-﻿﻿import ko = require("knockout");
-import Users = require('components/AddUser/AddUser');
+﻿/// <reference path="../add/index.ts" />
+﻿import ko = require("knockout");
+import Users = require('components/user/add/index');
 const GetUser = '/home/GetUsers';
- module ViewModel {
+namespace Component {
     export class ItemViewModel {
 
         public static Collection: KnockoutObservableArray<any>;
@@ -32,7 +33,7 @@ const GetUser = '/home/GetUsers';
             this.readonlyTemplate = ko.observable("readonlyTemplate");
             this.editTemplate = ko.observable();
             this.currentPage = ko.computed(function () {
-                var pagesize = parseInt(_this.pageSize.toString(), 10),
+                var pagesize = parseInt(_this.pageSize().toString(), 10),
                     startIndex = pagesize * _this.currentPageIndex(),
                     endIndex = startIndex + pagesize;
                 return ItemViewModel.Collection.slice(startIndex, endIndex);
@@ -78,7 +79,7 @@ const GetUser = '/home/GetUsers';
          * @param users Пользователь
          * @param e Jqvery.Event
          */
-        sortTable(users: KnockoutObservableArray<Users.AddUser>, e): void {
+        sortTable(users: KnockoutObservableArray<Component.AddUser>, e): void {
             var orderProp = $(e.target).attr("data-column")
             this.currentColumn(orderProp);
             ItemViewModel.Collection.sort(function (left, right) {
@@ -97,7 +98,7 @@ const GetUser = '/home/GetUsers';
         };
     }
 }
-export = ViewModel;
+
 // return the 'class' which is the constructor function
 //return ClickToEditViewModel;
 /**
