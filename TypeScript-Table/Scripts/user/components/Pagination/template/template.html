@@ -1,20 +1,20 @@
-﻿<tfoot>
-                   <tr>
-                       <td colspan="7">
-                           Отобразить на странице:
-                           <select id="pageSizeSelector" data-bind="value: PageSize">
-                               <option value="5">5</option>
-                               <option value="10">10</option>
-                               <option value="15">15</option>
-                               <option value="20">20</option>
-                               <option value="25">25</option>
-                               <option value="30">30</option>
-                           </select>
-                           <span style="padding-left:20px;">
-                               <button data-bind="click: PreviousPage" class="btn btn-sm"><i class="glyphicon glyphicon-step-backward"></i></button>
-                               Страница&nbsp;<label data-bind="text: CurrentPageIndex() + 1" class="badge"></label>
-                               <button data-bind="click: PreviousPage" class="btn btn-sm"><i class="glyphicon glyphicon-step-forward"></i></button>
-                           </span>
-                       </td>
-                   </tr>
-               </tfoot>
+﻿<table>
+    <tr>
+        <td colspan="7">
+            Отобразить на странице:
+            <select id="pageSizeSelector" data-bind="value: PageSize">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+            </select>
+            <span style="padding-left:20px;">
+                <button data-bind="click: PreviousPage" class="btn btn-sm"><i class="glyphicon glyphicon-step-backward"></i></button>
+                Страница&nbsp;<label data-bind="text: CurrentPageIndex() + 1" class="badge"></label>
+                <button data-bind="click: PreviousPage" class="btn btn-sm"><i class="glyphicon glyphicon-step-forward"></i></button>
+            </span>
+        </td>
+    </tr>
+</table>

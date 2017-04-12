@@ -2,6 +2,9 @@ define(["require", "exports", "knockout"], function (require, exports, ko) {
     "use strict";
     var Component;
     (function (Component) {
+        /**
+         * Пагинация таблицы
+         */
         var Pagination = (function () {
             function Pagination(items) {
                 //следующая страница
