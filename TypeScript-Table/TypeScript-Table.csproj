@@ -185,8 +185,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\components\user\add\template\template.html" />
-    <Content Include="Scripts\components\user\table\template\template.html" />
+    <Content Include="Scripts\user\components\add\template\template.html" />
+    <Content Include="Scripts\user\components\Pagination\template\template.html" />
+    <Content Include="Scripts\user\components\table\template\template.html" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -237,12 +238,14 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\components\user\add\index.ts" />
-    <TypeScriptCompile Include="Scripts\components\user\table\index.ts" />
+    <TypeScriptCompile Include="Scripts\user\components\add\index.ts" />
+    <TypeScriptCompile Include="Scripts\user\components\Pagination\index.ts" />
+    <TypeScriptCompile Include="Scripts\user\components\table\index.ts" />
     <TypeScriptCompile Include="Scripts\requiere\Config.ts" />
     <TypeScriptCompile Include="Scripts\requiere\Init.ts" />
     <TypeScriptCompile Include="Scripts\Table.ts" />
     <TypeScriptCompile Include="Scripts\typings\requirejs\require.d.ts" />
+    <TypeScriptCompile Include="Scripts\user\Models\UsersModels.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

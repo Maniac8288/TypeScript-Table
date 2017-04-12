@@ -1,14 +1,19 @@
-define(["require", "exports", "components/user/table/index", "components/user/add/index"], function (require, exports, Table, Users) {
+define(["require", "exports", "user/components/table/index", "user/components/add/index", "user/components/Pagination/index"], function (require, exports, Table, Users, Page) {
     "use strict";
     // register the component
     ko.components.register("Add-User", {
-        viewModel: Users.Component.AddUser,
-        template: { require: "text!components/user/add/template/template.html" }
+        viewModel: Users.Component.UserTableAdd,
+        template: { require: "text!user/components/add/template/template.html" }
     });
     // table the component
     ko.components.register("Table-Users", {
-        viewModel: Table.Component.ItemViewModel,
-        template: { require: "text!components/user/table/template/template.html" }
+        viewModel: Table.Component.Table,
+        template: { require: "text!user/components/table/template/template.html" }
+    });
+    // table the component
+    ko.components.register("Pagination", {
+        viewModel: Page.Component.Pagination,
+        template: { require: "text!user/components/Pagination/template/template.html" }
     });
 });
 //# sourceMappingURL=Init.js.map

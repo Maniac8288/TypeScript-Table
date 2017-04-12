@@ -15,30 +15,31 @@ define(["require", "exports", "requiere/init"], function (require, exports, comp
     var AddUser = "/home/AddUsers";
     var EditUser = '/home/EditUser';
     var GetUser = '/home/GetUsers';
-    /**
-     * Модель таблицы
-     */
-    var TableModel = (function () {
-        function TableModel() {
-            this.User = new User(null, '', '');
-            TableModel.Display = ko.observable(false);
-        }
-        return TableModel;
-    }());
-    exports.TableModel = TableModel;
-    ;
-    /**
-     * Модель пользователя
-     */
-    var User = (function () {
-        function User(id, firstName, lastName) {
-            this.Id = ko.observable(id);
-            this.FirstName = ko.observable(firstName);
-            this.LastName = ko.observable(lastName);
-        }
-        return User;
-    }());
 });
+/**
+ * Модель таблицы
+ */
+//export class TableModel {
+//        User: User = new User(null, '', '');
+//        //Модальное окно для редактирование пользователя
+//        static Display: KnockoutObservable<boolean>;
+//        constructor() {
+//            TableModel.Display = ko.observable(false);
+//        }
+//    };
+//    /**
+//     * Модель пользователя
+//     */
+//    class User {
+//        Id: KnockoutObservable<number>;
+//        FirstName: KnockoutObservable<string>;
+//        LastName: KnockoutObservable<string>;
+//        constructor(id: number, firstName: string, lastName: string) {
+//            this.Id = ko.observable(id);
+//            this.FirstName = ko.observable(firstName);
+//            this.LastName = ko.observable(lastName);
+//        }
+//    }
 /**
  * Действия над пользователем
  */
@@ -103,7 +104,7 @@ define(["require", "exports", "requiere/init"], function (require, exports, comp
 /**
  * Управление таблицей
  */
-//export class ItemViewModel {
+//class ItemViewModel {
 //    public static Collection: KnockoutObservableArray<any>;
 //    currentPage: any;
 //    pageSize: KnockoutObservable<string>;

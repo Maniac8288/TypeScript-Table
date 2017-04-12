@@ -7,7 +7,7 @@
 
     $(document).ready(function () {
         var viewModel = {
-            
+          
           
         };
         ko.applyBindings(viewModel);
@@ -32,29 +32,29 @@ const GetUser = '/home/GetUsers';
 
 
 
-export class TableModel {
+//export class TableModel {
        
       
-        User: User = new User(null, '', '');
-        //Модальное окно для редактирование пользователя
-        static Display: KnockoutObservable<boolean>;
-        constructor() {
-            TableModel.Display = ko.observable(false);
-        }
-    };
-    /**
-     * Модель пользователя
-     */
-    class User {
-        Id: KnockoutObservable<number>;
-        FirstName: KnockoutObservable<string>;
-        LastName: KnockoutObservable<string>;
-        constructor(id: number, firstName: string, lastName: string) {
-            this.Id = ko.observable(id);
-            this.FirstName = ko.observable(firstName);
-            this.LastName = ko.observable(lastName);
-        }
-    }
+//        User: User = new User(null, '', '');
+//        //Модальное окно для редактирование пользователя
+//        static Display: KnockoutObservable<boolean>;
+//        constructor() {
+//            TableModel.Display = ko.observable(false);
+//        }
+//    };
+//    /**
+//     * Модель пользователя
+//     */
+//    class User {
+//        Id: KnockoutObservable<number>;
+//        FirstName: KnockoutObservable<string>;
+//        LastName: KnockoutObservable<string>;
+//        constructor(id: number, firstName: string, lastName: string) {
+//            this.Id = ko.observable(id);
+//            this.FirstName = ko.observable(firstName);
+//            this.LastName = ko.observable(lastName);
+//        }
+//    }
     /**
      * Действия над пользователем
      */
@@ -119,7 +119,7 @@ export class TableModel {
         /**
          * Управление таблицей
          */
-        //export class ItemViewModel {
+        //class ItemViewModel {
         //    public static Collection: KnockoutObservableArray<any>;
         //    currentPage: any;
         //    pageSize: KnockoutObservable<string>;
