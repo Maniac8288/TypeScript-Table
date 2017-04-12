@@ -1,60 +1,47 @@
-define(["require", "exports", "knockout", 'user/components/Pagination/index'], function (require, exports, ko, Pagination) {
+define(["require", "exports", "knockout", 'user/components/Pagination/index', 'user/Models/UsersModels'], function (require, exports, ko, Pagination, UserModel) {
     "use strict";
     var Component;
     (function (Component) {
         var Table = (function () {
+            //iconType: KnockoutObservable<string>;
+            //static sortType: string;
+            //readonlyTemplate: KnockoutObservable<any>;
+            //editTemplate: KnockoutObservable<any>;
+            //currentTemplate: any;
+            //static resetTemplate: any;
+            //currentColumn: KnockoutObservable<string>;
             function Table() {
                 //Инцилизация колекции таблицы
-                this.Items = ko.observableArray([]);
-                this.getCollection();
+                this.Items = ko.observableArray([new UserModel.Models.UserModel(1, "ss", "ss")]);
+                console.log('------- 1 -----');
                 this.Page = new Pagination.Component.Pagination(this.Items);
-                // Сортировка таблицы
-                Table.sortType = "ascending";
-                this.iconType = ko.observable("");
-                var _this = this;
-                this.currentColumn = ko.observable("");
-                this.readonlyTemplate = ko.observable("readonlyTemplate");
-                this.editTemplate = ko.observable();
-                this.currentTemplate = function (tmpl) {
-                    return tmpl === _this.editTemplate() ? 'editTemplate' : _this.readonlyTemplate();
-                };
-                // Сброс шаблона на обычный
-                Table.resetTemplate = function (t) {
-                    _this.editTemplate("readonlyTemplate");
-                };
+                console.log('------- 2 -----');
+                this.getCollection();
+                //// Сортировка таблицы
+                //Table.sortType = "ascending";
+                //this.iconType = ko.observable("");
+                //var _this = this;
+                //this.currentColumn = ko.observable("");
+                //this.readonlyTemplate = ko.observable("readonlyTemplate");
+                //this.editTemplate = ko.observable();
+                //this.currentTemplate = function (tmpl) {
+                //    return tmpl === _this.editTemplate() ? 'editTemplate' : _this.readonlyTemplate();
+                //};
+                //// Сброс шаблона на обычный
+                //Table.resetTemplate = function (t) {
+                //    _this.editTemplate("readonlyTemplate");
+                //};
             }
             /**
             * Загрузка коллекции с сервера
             */
             Table.prototype.getCollection = function () {
+                var self = this;
                 $.getJSON(GetUser, function (data) {
-                    this.Items = data;
-                    console.log(this.Items);
+                    self.Items.push(new UserModel.Models.UserModel(2, "ss", "ss"));
+                    console.log('getJSON', self.Page.CurrentPage());
                 });
             };
-            /**
-             * Сортировка таблицы
-             * @param users Пользователь
-             * @param e Jqvery.Event
-             */
-            Table.prototype.sortTable = function (users, e) {
-                var orderProp = $(e.target).attr("data-column");
-                this.currentColumn(orderProp);
-                this.Items.sort(function (left, right) {
-                    var leftVal = left[orderProp];
-                    var rightVal = right[orderProp];
-                    if (Table.sortType == "ascending") {
-                        return leftVal < rightVal ? 1 : -1;
-                    }
-                    else {
-                        return leftVal > rightVal ? 1 : -1;
-                    }
-                });
-                // Смена иконки
-                Table.sortType = (Table.sortType == "ascending") ? "descending" : "ascending";
-                this.iconType((Table.sortType == "ascending") ? "glyphicon glyphicon-chevron-up" : "glyphicon glyphicon-chevron-down");
-            };
-            ;
             return Table;
         }());
         Component.Table = Table;

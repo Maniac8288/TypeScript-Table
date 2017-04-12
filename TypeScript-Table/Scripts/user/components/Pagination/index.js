@@ -1,5 +1,8 @@
 define(["require", "exports", "knockout"], function (require, exports, ko) {
     "use strict";
+    /**
+     * Компоненты
+     */
     var Component;
     (function (Component) {
         /**
@@ -25,13 +28,16 @@ define(["require", "exports", "knockout"], function (require, exports, ko) {
                         this.CurrentPageIndex((Math.ceil(this.Items().length / this.PageSize)) - 1);
                     }
                 };
-                this.Items = ko.observableArray([items]);
+                this.Items = items;
                 this.CurrentPage = ko.observableArray([]);
                 this.PageSize = ko.observable('5');
                 this.CurrentPageIndex = ko.observable(0);
                 var self = this;
                 this.CurrentPage = ko.computed(function () {
+                    if (!self.Items)
+                        return [];
                     var pagesize = parseInt(self.PageSize().toString(), 10), startIndex = pagesize * self.CurrentPageIndex(), endIndex = startIndex + pagesize;
+                    console.log('self.Items', self.Items());
                     return self.Items();
                 });
             }

@@ -1,5 +1,8 @@
 ﻿﻿import ko = require("knockout");
-import Table = require('user/components/table/index');
+ import Table = require('user/components/table/index');
+/**
+ * Компоненты
+ */
 export namespace Component {
     /**
      * Пагинация таблицы
@@ -9,16 +12,20 @@ export namespace Component {
         PageSize: KnockoutObservable<string>;
         CurrentPageIndex: KnockoutObservable<number>;
         Items: KnockoutObservableArray<any>;
-            constructor(items: KnockoutObservableArray<any>) {
-            this.Items = ko.observableArray([items]);
+        constructor(items: KnockoutObservableArray<any>) {
+            
+                this.Items = items;
+                
             this.CurrentPage = ko.observableArray([]);
             this.PageSize = ko.observable('5');
             this.CurrentPageIndex = ko.observable(0);
             var self = this;
             this.CurrentPage = ko.computed(function () {
+                if (!self.Items) return [];
                 var pagesize = parseInt(self.PageSize().toString(), 10),
                     startIndex = pagesize * self.CurrentPageIndex(),
-                    endIndex = startIndex + pagesize;   
+                    endIndex = startIndex + pagesize;
+                console.log('self.Items',self.Items()); 
                 return  self.Items();
             });
         }
@@ -39,7 +46,7 @@ export namespace Component {
             }
             else {
                 this.CurrentPageIndex((Math.ceil(this.Items().length / this.PageSize)) - 1);
-            }
+             }
         };
     }
 }
