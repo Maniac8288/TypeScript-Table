@@ -2,22 +2,23 @@
 ﻿import ko = require("knockout");
 import Users = require('components/user/add/index');
 const GetUser = '/home/GetUsers';
-namespace Component {
+export namespace Component {
     export class ItemViewModel {
-
+    
         public static Collection: KnockoutObservableArray<any>;
         currentPage: any;
         pageSize: KnockoutObservable<string>;
         currentPageIndex: KnockoutObservable<number>;
         static sortType: string;
         iconType: KnockoutObservable<string>;
-
+        public static testTable: KnockoutObservableArray<Users.Component.AddUser>
         readonlyTemplate: KnockoutObservable<any>;
         editTemplate: KnockoutObservable<any>;
         currentTemplate: any;
         static resetTemplate: any;
         currentColumn: KnockoutObservable<string>;
         constructor() {
+            ItemViewModel.testTable = ko.observableArray([]);
             //Инцилизация пагинации
             this.currentPage = ko.observableArray([]);
             this.pageSize = ko.observable('5');
@@ -54,7 +55,19 @@ namespace Component {
             $.getJSON(GetUser, function (data) {
 
                 ItemViewModel.Collection(data);
+                var serverData: any[];
+              serverData = JSON.parse($("#serverJSON").val());
+              for (var i = 0; i < serverData.length; i++) {
+                    var User: any;
+                    User = serverData[i];
+                    ItemViewModel.testTable.push(new Users.Component.AddUser(User.Id, User.FirstName,
+                        User.LastName));
+                }
             });
+            
+        }
+        test(): void {
+            
         }
         //следующая страница
         nextPage = function () {
@@ -79,7 +92,7 @@ namespace Component {
          * @param users Пользователь
          * @param e Jqvery.Event
          */
-        sortTable(users: KnockoutObservableArray<Component.AddUser>, e): void {
+        sortTable(users: KnockoutObservableArray<Users.Component.AddUser>, e): void {
             var orderProp = $(e.target).attr("data-column")
             this.currentColumn(orderProp);
             ItemViewModel.Collection.sort(function (left, right) {

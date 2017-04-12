@@ -15,10 +15,9 @@
     });
 
 
-import UserAdd = require("components/AddUser/AddUserRegister");
-import UsersTable = require("components/TableUsers/TableUsersRegister");
-var userAdd = UserAdd;
-var userTable = UsersTable;
+import components = require("requiere/init");
+var Components = components;
+
 
 /**
  * Константы для подключение к контролеру
@@ -32,8 +31,8 @@ const GetUser = '/home/GetUsers';
  */
 
 
-  
-    class TableModel {
+
+export class TableModel {
        
       
         User: User = new User(null, '', '');

@@ -5,7 +5,7 @@
 import ko = require("knockout");
 import test = require("components/user/table/index");
 
-namespace Component {
+export namespace Component {
     export class AddUser {
         Id: KnockoutObservable<number>;
         FirstName: KnockoutObservable<string>;
@@ -29,7 +29,7 @@ namespace Component {
                 success: function (data) {
                     console.log(dataObject);
                     user.FirstName('');
-                    test.ItemViewModel.Collection.push(data);
+                    test.Component.ItemViewModel.Collection.push(data);
                 },
                 error: function () {
                     console.log(dataObject);

@@ -1,17 +1,16 @@
-﻿/// <reference path="../components/user/add/index.ts" />
-/// <reference path="../components/user/table/index.ts" />
-import Component = require("components/user/table/index");
-
+﻿
+import Table = require("components/user/table/index");
+import Users = require("components/user/add/index");
 // register the component
 ko.components.register("Add-User", {
-    viewModel: Component.AddUser,
+    viewModel: Users.Component.AddUser,
     template: { require: "text!components/user/add/template/template.html" }
 });
 
 
 
-// register the component
+// table the component
 ko.components.register("Table-Users", {
-    viewModel: Component.ItemViewModel,
+    viewModel: Table.Component.ItemViewModel,
     template: { require: "text!components/user/table/template/template.html" }
 });
