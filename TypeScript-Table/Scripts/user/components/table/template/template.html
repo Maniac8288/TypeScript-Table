@@ -31,15 +31,13 @@
                 </thead>
 
                 <tbody >
-                    <span data-bind="text:Items().length"></span>
-                    <!--ko foreach: Items()-->
+                 
+                    <!--ko foreach: Page.CurrentPage()-->
                     <tr>
                         <td data-bind="text:Id"></td>
                         <td data-bind="text:FirstName"></td>
                         <td data-bind="text:LastName"></td>
 
-                        <!--<td><button type="button" class="btn btn-warning btn-xs " data-bind="click: $parent.editTemplate">Редактировать</button></td>
-                        <td><button type="button" class="btn btn-danger btn-xs " data-bind="click: $root.UserAction.removeUsers">Удалить</button></td>-->
                     </tr>
                     <!--/ko-->
                </tbody>
@@ -51,22 +49,3 @@
     </div>
 </div>
 
-<!-- Шаблон редактирования-->
-<!--<script type="text/html" id="editTemplate">
-    <tr>
-        <td data-bind="text: $data.Id"></td>
-        <td>
-            <input type="text" data-bind="value: $data.FirstName" class="form-control" />
-        </td>
-        <td>
-            <input type="text" data-bind="value: $data.LastName" class="form-control" />
-        </td>
-
-        <td>
-            <button type="button" class="btn btn-success glyphicon glyphicon-ok btn-sm" data-bind="click: $root.UserAction.editUser"></button>
-        </td>
-        <td>
-            <button type="button" class="btn btn-danger glyphicon glyphicon-remove btn-sm" data-bind="click: $root.UserAction.resetTemplate"></button>
-        </td>
-    </tr>
-</script>-->

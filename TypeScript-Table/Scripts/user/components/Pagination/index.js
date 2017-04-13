@@ -12,6 +12,7 @@ define(["require", "exports", "knockout"], function (require, exports, ko) {
             function Pagination(items) {
                 //следующая страница
                 this.NextPage = function () {
+                    console.log();
                     if (((this.CurrentPageIndex() + 1) * this.PageSize()) < this.Items().length) {
                         this.CurrentPageIndex(this.CurrentPageIndex() + 1);
                     }
@@ -30,15 +31,14 @@ define(["require", "exports", "knockout"], function (require, exports, ko) {
                 };
                 this.Items = items;
                 this.CurrentPage = ko.observableArray([]);
-                this.PageSize = ko.observable('5');
+                this.PageSize = ko.observable(30);
                 this.CurrentPageIndex = ko.observable(0);
                 var self = this;
                 this.CurrentPage = ko.computed(function () {
                     if (!self.Items)
                         return [];
                     var pagesize = parseInt(self.PageSize().toString(), 10), startIndex = pagesize * self.CurrentPageIndex(), endIndex = startIndex + pagesize;
-                    console.log('self.Items', self.Items());
-                    return self.Items();
+                    return self.Items.slice(startIndex, endIndex);
                 });
             }
             return Pagination;

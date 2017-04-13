@@ -242,7 +242,7 @@
     <TypeScriptCompile Include="Scripts\user\components\Pagination\index.ts" />
     <TypeScriptCompile Include="Scripts\user\components\table\index.ts" />
     <TypeScriptCompile Include="Scripts\requiere\Config.ts" />
-    <TypeScriptCompile Include="Scripts\requiere\Init.ts" />
+    <TypeScriptCompile Include="Scripts\Init.ts" />
     <TypeScriptCompile Include="Scripts\Table.ts" />
     <TypeScriptCompile Include="Scripts\typings\requirejs\require.d.ts" />
     <TypeScriptCompile Include="Scripts\user\Models\UsersModels.ts" />

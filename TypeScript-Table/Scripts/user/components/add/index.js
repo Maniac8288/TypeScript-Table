@@ -1,4 +1,4 @@
-define(["require", "exports", "user/Models/UsersModels"], function (require, exports, UserModels) {
+define(["require", "exports", "user/components/table/index", "user/Models/UsersModels"], function (require, exports, Table, UserModels) {
     "use strict";
     var Component;
     (function (Component) {
@@ -19,7 +19,7 @@ define(["require", "exports", "user/Models/UsersModels"], function (require, exp
                     data: data,
                     success: function (data) {
                         console.log(data);
-                        //Table.Component.ItemViewModel.Collection.push(data);
+                        Table.Component.Table.prototype.Items.push(data);
                     },
                     error: function () {
                         console.log(data);

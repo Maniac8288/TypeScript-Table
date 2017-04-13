@@ -2,6 +2,7 @@
 import Table = require("user/components/table/index");
 import Users = require("user/components/add/index");
 import Page = require("user/components/Pagination/index");
+import ko = require("knockout");
 // register the component
 ko.components.register("Add-User", {
     viewModel: Users.Component.UserTableAdd,

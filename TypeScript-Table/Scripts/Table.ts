@@ -4,7 +4,7 @@
 
 ///<reference path="typings/requirejs/require.d.ts" />
 
-
+import ko = require("knockout");
     $(document).ready(function () {
         var viewModel = {
           
@@ -15,7 +15,7 @@
     });
 
 
-import components = require("requiere/init");
+import components = require("init");
 var Components = components;
 
 

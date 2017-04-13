@@ -1,8 +1,7 @@
 ///<reference path="typings/jquery/jquery.d.ts" />
 ///<reference path="typings/knockout/knockout.d.ts" />
-define(["require", "exports", "requiere/init"], function (require, exports, components) {
+define(["require", "exports", "knockout", "init"], function (require, exports, ko, components) {
     "use strict";
-    ///<reference path="typings/requirejs/require.d.ts" />
     $(document).ready(function () {
         var viewModel = {};
         ko.applyBindings(viewModel);

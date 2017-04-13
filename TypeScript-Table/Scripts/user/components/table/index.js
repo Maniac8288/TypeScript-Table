@@ -38,7 +38,7 @@ define(["require", "exports", "knockout", 'user/components/Pagination/index', 'u
             Table.prototype.getCollection = function () {
                 var self = this;
                 $.getJSON(GetUser, function (data) {
-                    self.Items.push(new UserModel.Models.UserModel(2, "ss", "ss"));
+                    self.Items(data);
                     console.log('getJSON', self.Page.CurrentPage());
                 });
             };

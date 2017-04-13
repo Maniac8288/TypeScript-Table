@@ -1,4 +1,5 @@
-﻿export namespace Models {
+﻿import ko = require("knockout");
+export namespace Models {
     export class UserModel {
         public Id: KnockoutObservable<number>;
         public FirstName: KnockoutObservable<string>;

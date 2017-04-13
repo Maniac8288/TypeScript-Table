@@ -29,7 +29,7 @@ export namespace Component {
                 success: function (data) {
                     console.log(data);
                   
-                    //Table.Component.ItemViewModel.Collection.push(data);
+                    Table.Component.Table.prototype.Items.push(data);
                 },
                 error: function () {
                     console.log(data);
