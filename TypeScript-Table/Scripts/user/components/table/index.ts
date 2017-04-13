@@ -34,7 +34,7 @@ export namespace Component {
         getCollection(): void {
             var self = this;
             $.getJSON(GetUser, function (data) {
-                self.Items(data;
+                self.Items(data);
                 console.log('getJSON',self.Page.CurrentPage())
                 
             });  

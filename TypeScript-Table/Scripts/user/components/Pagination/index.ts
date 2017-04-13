@@ -1,7 +1,7 @@
 ﻿
 import ko = require("knockout");
 
- import Table = require('user/components/table/index');
+ 
 /**
  * Компоненты
  */
@@ -19,7 +19,7 @@ export namespace Component {
             
             this.Items = items;
             this.CurrentPage = ko.observableArray([]);
-            this.PageSize = ko.observable(30);
+            this.PageSize = ko.observable(5);
             this.CurrentPageIndex = ko.observable(0);
             var self = this;
             this.CurrentPage = ko.computed(function () {
@@ -33,14 +33,11 @@ export namespace Component {
         }
         //следующая страница
         NextPage = function () {
-            console.log()
-            if (((this.CurrentPageIndex() + 1) * this.PageSize()) < this.Items().length) {
-             
-                this.CurrentPageIndex(this.CurrentPageIndex() + 1);
-            }
-            else {
-                this.currentPageIndex(0);
-            }  
+
+          
+            this.CurrentPageIndex(this.CurrentPageIndex() + 1);
+           
+       
         };
         //предыдущая страница
         PreviousPage = function () {

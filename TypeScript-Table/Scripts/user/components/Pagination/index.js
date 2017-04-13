@@ -12,13 +12,7 @@ define(["require", "exports", "knockout"], function (require, exports, ko) {
             function Pagination(items) {
                 //следующая страница
                 this.NextPage = function () {
-                    console.log();
-                    if (((this.CurrentPageIndex() + 1) * this.PageSize()) < this.Items().length) {
-                        this.CurrentPageIndex(this.CurrentPageIndex() + 1);
-                    }
-                    else {
-                        this.currentPageIndex(0);
-                    }
+                    this.CurrentPageIndex(this.CurrentPageIndex() + 1);
                 };
                 //предыдущая страница
                 this.PreviousPage = function () {
@@ -31,7 +25,7 @@ define(["require", "exports", "knockout"], function (require, exports, ko) {
                 };
                 this.Items = items;
                 this.CurrentPage = ko.observableArray([]);
-                this.PageSize = ko.observable(30);
+                this.PageSize = ko.observable(5);
                 this.CurrentPageIndex = ko.observable(0);
                 var self = this;
                 this.CurrentPage = ko.computed(function () {
