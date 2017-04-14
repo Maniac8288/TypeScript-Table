@@ -1,7 +1,8 @@
-﻿
-import Table = require("user/components/table/index");
-import Users = require("user/components/add/index");
-import Page = require("user/components/Pagination/index");
+﻿/// <reference path="typings/knockout/knockout.d.ts" />
+
+import Table = require("user/components/table/app");
+import Users = require("user/components/add/app");
+import Page = require("user/components/Pagination/app");
 import ko = require("knockout");
 // register the component
 ko.components.register("Add-User", {
@@ -18,3 +19,4 @@ ko.components.register("Pagination", {
     viewModel: Page.Component.Pagination,
     template: { require: "text!user/components/Pagination/template/template.html" }
 });
+ko.applyBindings();

@@ -1,4 +1,5 @@
-define(["require", "exports", "user/components/table/index", "user/components/add/index", "user/components/Pagination/index", "knockout"], function (require, exports, Table, Users, Page, ko) {
+/// <reference path="typings/knockout/knockout.d.ts" />
+define(["require", "exports", "user/components/table/app", "user/components/add/app", "user/components/Pagination/app", "knockout"], function (require, exports, Table, Users, Page, ko) {
     "use strict";
     // register the component
     ko.components.register("Add-User", {
@@ -15,5 +16,6 @@ define(["require", "exports", "user/components/table/index", "user/components/ad
         viewModel: Page.Component.Pagination,
         template: { require: "text!user/components/Pagination/template/template.html" }
     });
+    ko.applyBindings();
 });
 //# sourceMappingURL=Init.js.map

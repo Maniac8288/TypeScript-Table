@@ -32,12 +32,13 @@ define(["require", "exports", "knockout"], function (require, exports, ko) {
                     if (!self.Items)
                         return [];
                     var pagesize = parseInt(self.PageSize().toString(), 10), startIndex = pagesize * self.CurrentPageIndex(), endIndex = startIndex + pagesize;
-                    return self.Items.slice(startIndex, endIndex);
+                    return self.Items().slice(startIndex, endIndex);
                 });
             }
             return Pagination;
         }());
         Component.Pagination = Pagination;
     })(Component = exports.Component || (exports.Component = {}));
+    var UrlDeleteUser = '/home/DeleteUser/';
 });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=app.js.map

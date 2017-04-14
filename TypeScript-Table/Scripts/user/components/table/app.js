@@ -1,4 +1,4 @@
-define(["require", "exports", "knockout", 'user/components/Pagination/index'], function (require, exports, ko, Pagination) {
+define(["require", "exports", "knockout", 'user/components/Pagination/app'], function (require, exports, ko, Pagination) {
     "use strict";
     var Component;
     (function (Component) {
@@ -6,9 +6,7 @@ define(["require", "exports", "knockout", 'user/components/Pagination/index'], f
             function Table() {
                 //Инцилизация колекции таблицы
                 this.Items = ko.observableArray([]);
-                console.log('------- 1 -----');
                 this.Page = new Pagination.Component.Pagination(this.Items);
-                console.log('------- 2 -----');
                 this.getCollection();
                 // Сортировка таблицы
                 Table.sortType = "ascending";
@@ -24,27 +22,14 @@ define(["require", "exports", "knockout", 'user/components/Pagination/index'], f
                     console.log('getJSON', self.Page.CurrentPage());
                 });
             };
-            /**
-             * Сортировка таблицы
-             * @param users Пользователь
-             * @param e Jqvery.Event
-             */
-            Table.prototype.sortTable = function (users, e) {
-                var orderProp = $(e.target).attr("data-column");
-                this.currentColumn(orderProp);
-                this.Items.sort(function (left, right) {
-                    var leftVal = left[orderProp];
-                    var rightVal = right[orderProp];
-                    if (Table.sortType == "ascending") {
-                        return leftVal < rightVal ? 1 : -1;
-                    }
-                    else {
-                        return leftVal > rightVal ? 1 : -1;
+            Table.prototype.removeUser = function (user) {
+                $.ajax({
+                    url: UrlDeleteUser + user.Id,
+                    type: 'post',
+                    contentType: 'application/json',
+                    success: function (data) {
                     }
                 });
-                // Смена иконки
-                Table.sortType = (Table.sortType == "ascending") ? "descending" : "ascending";
-                this.iconType((Table.sortType == "ascending") ? "glyphicon glyphicon-chevron-up" : "glyphicon glyphicon-chevron-down");
             };
             ;
             return Table;
@@ -58,5 +43,6 @@ define(["require", "exports", "knockout", 'user/components/Pagination/index'], f
      */
     var ConstAddUser = "/home/AddUsers";
     var GetUser = '/home/GetUsers';
+    var UrlDeleteUser = '/home/DeleteUser/';
 });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=app.js.map

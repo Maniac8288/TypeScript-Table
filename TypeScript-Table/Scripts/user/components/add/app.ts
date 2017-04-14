@@ -1,10 +1,10 @@
-﻿/// <reference path="../table/index.ts" />
+﻿/// <reference path="../../../typings/jquery/jquery.d.ts" />
 /*
     click-to-edit component viewmodel file
     loaded for the click-to-edit viewmodel
  */
 import ko = require("knockout");
-import Table = require("user/components/table/index");
+import Table = require("user/components/table/app");
 import UserModels = require("user/Models/UsersModels");
 export namespace Component {
     export class UserTableAdd {
@@ -25,17 +25,17 @@ export namespace Component {
                 url: ConstAddUser,
                 type: 'post',
                 data: data,
-               
+
                 success: function (data) {
                     console.log(data);
+                    var event = new CustomEvent('NewUser',{ 'detail':});
+                    
                   
-                    Table.Component.Table.prototype.Items.push(data);
                 },
                 error: function () {
                     console.log(data);
                 }
             });
-            
             this.User.FirstName("");
             this.User.LastName("");
         };

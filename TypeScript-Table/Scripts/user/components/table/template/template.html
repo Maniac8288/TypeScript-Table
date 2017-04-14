@@ -25,21 +25,25 @@
                                 <i></i>
                             </span>
                         </th>
-                        <!--<th></th>
-                        <th></th>-->
+                   
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
 
-                <tbody >
+                <tbody id="test" >
                  
                     <!--ko foreach: Page.CurrentPage()-->
                     <tr>
                         <td data-bind="text:Id"></td>
                         <td data-bind="text:FirstName"></td>
                         <td data-bind="text:LastName"></td>
-
+                        <td><button type="button" class="btn btn-warning glyphicon glyphicon-pencil btn-sm" ></button></td>
+                        <td><button type="button" class="btn btn-danger btn-xs " data-bind="click: $parent.removeUser">Удалить</button></td>
+                    
                     </tr>
                     <!--/ko-->
+                    
                </tbody>
                 
             </table>

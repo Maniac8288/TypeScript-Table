@@ -1,4 +1,4 @@
-define(["require", "exports", "user/components/table/index", "user/Models/UsersModels"], function (require, exports, Table, UserModels) {
+define(["require", "exports", "user/Models/UsersModels"], function (require, exports, UserModels) {
     "use strict";
     var Component;
     (function (Component) {
@@ -19,7 +19,7 @@ define(["require", "exports", "user/components/table/index", "user/Models/UsersM
                     data: data,
                     success: function (data) {
                         console.log(data);
-                        Table.Component.Table.prototype.Items.push(data);
+                        var event = new Event('NewUser');
                     },
                     error: function () {
                         console.log(data);
@@ -40,4 +40,4 @@ define(["require", "exports", "user/components/table/index", "user/Models/UsersM
      */
     var ConstAddUser = "/home/AddUsers";
 });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=app.js.map
