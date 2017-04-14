@@ -186,6 +186,7 @@
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\user\components\add\template\template.html" />
+    <Content Include="Scripts\user\components\Edit\template\template.html" />
     <Content Include="Scripts\user\components\Pagination\template\template.html" />
     <Content Include="Scripts\user\components\table\template\template.html" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -235,6 +236,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\user\components\add\app.ts" />
+    <TypeScriptCompile Include="Scripts\user\components\Edit\app.ts" />
     <TypeScriptCompile Include="Scripts\user\components\Pagination\app.ts" />
     <TypeScriptCompile Include="Scripts\user\components\table\app.ts" />
     <TypeScriptCompile Include="Scripts\requiere\Config.ts" />

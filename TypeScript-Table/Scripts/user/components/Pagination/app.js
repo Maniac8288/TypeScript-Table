@@ -20,11 +20,9 @@ define(["require", "exports", "knockout"], function (require, exports, ko) {
                         this.CurrentPageIndex(this.CurrentPageIndex() - 1);
                     }
                     else {
-                        this.CurrentPageIndex((Math.ceil(this.Items().length / this.PageSize)) - 1);
                     }
                 };
                 this.Items = items;
-                this.CurrentPage = ko.observableArray([]);
                 this.PageSize = ko.observable(5);
                 this.CurrentPageIndex = ko.observable(0);
                 var self = this;

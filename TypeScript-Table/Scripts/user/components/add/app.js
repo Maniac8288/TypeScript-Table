@@ -19,7 +19,6 @@ define(["require", "exports", "user/Models/UsersModels"], function (require, exp
                     data: data,
                     success: function (data) {
                         console.log(data);
-                        var event = new Event('NewUser');
                     },
                     error: function () {
                         console.log(data);

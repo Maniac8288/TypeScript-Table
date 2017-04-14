@@ -4,11 +4,11 @@
     loaded for the click-to-edit viewmodel
  */
 import ko = require("knockout");
-import Table = require("user/components/table/app");
 import UserModels = require("user/Models/UsersModels");
 export namespace Component {
     export class UserTableAdd {
         User: UserModels.Models.UserModel;
+        
         constructor() {
             this.User = new UserModels.Models.UserModel();
         }
@@ -25,12 +25,9 @@ export namespace Component {
                 url: ConstAddUser,
                 type: 'post',
                 data: data,
-
                 success: function (data) {
                     console.log(data);
-                    var event = new CustomEvent('NewUser',{ 'detail':});
                     
-                  
                 },
                 error: function () {
                     console.log(data);
