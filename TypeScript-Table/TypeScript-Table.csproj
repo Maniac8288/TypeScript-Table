@@ -185,6 +185,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\microevent-debug.js" />
     <Content Include="Scripts\user\components\add\template\template.html" />
     <Content Include="Scripts\user\components\Edit\template\template.html" />
     <Content Include="Scripts\user\components\Pagination\template\template.html" />

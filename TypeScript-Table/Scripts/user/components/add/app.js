@@ -1,3 +1,4 @@
+/// <reference path="../../../typings/jquery/jquery.d.ts" />
 define(["require", "exports", "user/Models/UsersModels"], function (require, exports, UserModels) {
     "use strict";
     var Component;

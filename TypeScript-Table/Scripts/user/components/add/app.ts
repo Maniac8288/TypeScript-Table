@@ -1,8 +1,5 @@
 ﻿/// <reference path="../../../typings/jquery/jquery.d.ts" />
-/*
-    click-to-edit component viewmodel file
-    loaded for the click-to-edit viewmodel
- */
+
 import ko = require("knockout");
 import UserModels = require("user/Models/UsersModels");
 export namespace Component {
@@ -38,6 +35,7 @@ export namespace Component {
         };
 
     }
+    
 }
 // return the 'class' which is the constructor function
 //return ClickToEditViewModel;
